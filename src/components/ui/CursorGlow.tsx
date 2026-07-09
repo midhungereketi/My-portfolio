@@ -54,7 +54,7 @@ export const CursorGlow = () => {
       
       {/* Custom Dot Cursor */}
       <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[100] rounded-full mix-blend-difference bg-white"
+        className="pointer-events-none fixed top-0 left-0 z-[9999] rounded-full mix-blend-difference bg-white"
         animate={{
           x: mousePosition.x - (isHovering ? 24 : 8),
           y: mousePosition.y - (isHovering ? 24 : 8),
@@ -72,7 +72,7 @@ export const CursorGlow = () => {
       
       {/* Custom Ring Cursor */}
       <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[99] rounded-full border border-primary/50"
+        className="pointer-events-none fixed top-0 left-0 z-[9998] rounded-full border border-primary/50"
         animate={{
           x: mousePosition.x - 20,
           y: mousePosition.y - 20,

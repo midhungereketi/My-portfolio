@@ -33,10 +33,11 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
               scrollbarWidth: 'thin', 
               scrollbarColor: 'rgba(255,255,255,0.2) transparent'
             }}
+            data-lenis-prevent="true"
           >
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-primary rounded-full text-white transition-colors backdrop-blur-md"
+              className="absolute top-4 right-4 z-50 p-2 bg-black/50 hover:bg-primary rounded-full text-white transition-colors backdrop-blur-md interactive cursor-pointer"
             >
               <X size={24} />
             </button>

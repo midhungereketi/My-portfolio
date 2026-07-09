@@ -118,7 +118,7 @@ export const portfolioData = {
       liveDemo: "#",
       category: "Software Engineering",
       date: "2024",
-      image: "/src/assets/projects/mind_vault.png",
+      image: "/projects/mind_vault.png",
       features: ["Optimized search & retrieval using Hash Maps and BST", "Priority-based note management using Heaps", "Graph-based relationship mapping"],
       challenges: "Efficiently organizing, sorting, and scheduling notes based on priority.",
       solutions: "Implemented Heaps for priority management, Stacks for undo, and Queues for reminders.",
