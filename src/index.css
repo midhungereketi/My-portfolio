@@ -9,13 +9,9 @@
   
   body {
     @apply bg-background text-text;
-    cursor: none; /* Hide default cursor for custom cursor */
   }
   
-  /* Ensure interactive elements also hide default cursor */
-  a, button, input, textarea, select {
-    cursor: none !important;
-  }
+
 
   ::-webkit-scrollbar {
     width: 8px;

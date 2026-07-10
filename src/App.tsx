@@ -1,4 +1,3 @@
-import { CursorGlow } from './components/ui/CursorGlow';
 import { LenisScroll } from './components/ui/LenisScroll';
 import { NoiseOverlay } from './components/ui/NoiseOverlay';
 import { Preloader } from './components/ui/Preloader';
@@ -19,7 +18,6 @@ function App() {
       <div className="bg-background min-h-screen text-text overflow-hidden relative">
         <Preloader />
         <NoiseOverlay />
-        <CursorGlow />
         <Navbar />
         
         <main>
