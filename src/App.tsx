@@ -1,3 +1,6 @@
+import { AnimatePresence, motion } from 'framer-motion';
+import { ScrollProgress } from './components/ui/ScrollProgress';
+import { BackToTop } from './components/ui/BackToTop';
 import { LenisScroll } from './components/ui/LenisScroll';
 import { NoiseOverlay } from './components/ui/NoiseOverlay';
 import { Preloader } from './components/ui/Preloader';
@@ -16,22 +19,31 @@ function App() {
   return (
     <LenisScroll>
       <div className="bg-background min-h-screen text-text overflow-hidden relative">
+        <ScrollProgress />
         <Preloader />
         <NoiseOverlay />
         <Navbar />
         
-        <main>
-          <Hero />
-          <About />
-          <Skills />
-          <Projects />
-          <Experience />
-          <Education />
-          <Certificates />
-          <Contact />
-        </main>
+        <AnimatePresence mode="wait">
+          <motion.main
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Hero />
+            <About />
+            <Skills />
+            <Projects />
+            <Experience />
+            <Education />
+            <Certificates />
+            <Contact />
+          </motion.main>
+        </AnimatePresence>
         
         <Footer />
+        <BackToTop />
       </div>
     </LenisScroll>
   );

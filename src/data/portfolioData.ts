@@ -14,7 +14,7 @@ export const portfolioData = {
       "Backend Engineer",
       "Tech Enthusiast"
     ],
-    resumeUrl: "/resume.pdf",
+    resumeUrl: "https://drive.google.com/file/d/1lzEV6l51oG0mn7oYuDaY3AGDBBJ-hPTO/view?usp=drive_link",
     contactEmail: "midhungereketi@gmail.com",
     socials: {
       github: "https://github.com/midhungereketi",

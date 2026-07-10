@@ -48,9 +48,11 @@ export const Skills = () => {
                 <motion.div
                   key={skill.name}
                   layout
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
                   exit={{ opacity: 0, scale: 0.8 }}
+                  whileHover={{ scale: 1.05, rotate: 2, y: -5 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
                   className="glass-card group cursor-pointer relative overflow-hidden"
                 >
