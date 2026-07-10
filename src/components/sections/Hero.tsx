@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
-import { AbstractGeometry } from '../3d/AbstractGeometry';
+import { CyberSphere } from '../3d/CyberSphere';
 import { useTypewriter } from '../../hooks/useTypewriter';
 import { portfolioData } from '../../data/portfolioData';
 import { Download, ArrowRight } from 'lucide-react';
@@ -12,8 +12,48 @@ export const Hero = () => {
   const y1 = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -200]);
 
+  // Generate random particles for background
+  const particles = Array.from({ length: 30 }).map((_, i) => ({
+    id: i,
+    size: Math.random() * 4 + 1,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    duration: Math.random() * 20 + 10,
+    delay: Math.random() * 5
+  }));
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Animated Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20" />
+
+      {/* Dynamic Background Particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {particles.map((p) => (
+          <motion.div
+            key={p.id}
+            className="absolute rounded-full bg-primary/40 shadow-[0_0_10px_rgba(59,130,246,0.5)]"
+            style={{
+              width: p.size,
+              height: p.size,
+              left: `${p.x}%`,
+              top: `${p.y}%`,
+            }}
+            animate={{
+              y: [0, -100, 0],
+              opacity: [0, 1, 0],
+              scale: [1, 1.5, 1]
+            }}
+            transition={{
+              duration: p.duration,
+              repeat: Infinity,
+              delay: p.delay,
+              ease: "linear"
+            }}
+          />
+        ))}
+      </div>
+
       {/* Background glowing effects with parallax */}
       <motion.div style={{ y: y1 }} className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[128px] animate-blob" />
       <motion.div style={{ y: y2 }} className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-tertiary/10 rounded-full blur-[128px] animate-blob animation-delay-2000" />
@@ -89,6 +129,24 @@ export const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="flex flex-wrap gap-4 mt-4"
+          >
+            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+              <span className="text-xl">🎓</span>
+              <span className="text-textMuted font-medium tracking-wide">CGPA</span>
+              <span className="text-primary font-bold">{portfolioData.education[0].cgpa}</span>
+            </div>
+            
+            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+              <span className="text-xl">🏛️</span>
+              <span className="text-primary font-bold">{portfolioData.education[0].university.split('—')[0].trim()}</span>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
             className="flex flex-wrap gap-4 pt-4"
           >
@@ -127,11 +185,11 @@ export const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="h-[500px] w-full relative hidden md:block"
+          className="h-[350px] sm:h-[400px] lg:h-[550px] w-full relative order-first lg:order-last mt-8 lg:mt-0"
         >
           <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-tertiary/5 rounded-full blur-3xl -z-10" />
           <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
-            <AbstractGeometry />
+            <CyberSphere />
           </Canvas>
         </motion.div>
       </div>

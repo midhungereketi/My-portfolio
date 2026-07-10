@@ -8,11 +8,10 @@ export const portfolioData = {
     name: "Midhun Gereketi",
     title: "B.Tech Cyber Security Student",
     roles: [
+      "Vibe Coder",
       "Cyber Security Student",
-      "Full-Stack Developer",
-      "AI Integrator",
-      "Backend Engineer",
-      "Tech Enthusiast"
+      "Tech Enthusiast",
+      "AI Integrator"
     ],
     resumeUrl: "https://drive.google.com/file/d/1lzEV6l51oG0mn7oYuDaY3AGDBBJ-hPTO/view?usp=drive_link",
     contactEmail: "midhungereketi@gmail.com",
@@ -153,7 +152,7 @@ export const portfolioData = {
   ],
   education: [
     {
-      degree: "B.Tech in Information Technology",
+      degree: "B.Tech in Computer Science and Engineering (Cyber Security)",
       university: "Vellore Institute of Technology (VIT) — Vellore",
       cgpa: "8.36 / 10.0",
       duration: "2024 - 2028 (Expected)",

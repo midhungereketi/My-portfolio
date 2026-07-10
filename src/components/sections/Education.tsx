@@ -36,16 +36,6 @@ export const Education = () => {
                 </div>
               </div>
 
-              <div className="mt-6 border-t border-white/10 pt-4">
-                <h5 className="text-white font-medium mb-2">Key Subjects</h5>
-                <div className="flex flex-wrap gap-2">
-                  {edu.subjects.map((subject, i) => (
-                    <span key={i} className="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-sm text-textMuted hover:text-white transition-colors">
-                      {subject}
-                    </span>
-                  ))}
-                </div>
-              </div>
 
               {edu.highlights && (
                 <div className="mt-4">
