@@ -51,77 +51,59 @@ export const portfolioData = {
     {
       id: 1,
       title: "Phishing URL Detection System",
-      description: "A full-stack system to analyze URLs and classify phishing threats using an intuitive web interface.",
-      technologies: ["React.js", "Vite", "Firebase", "Firestore", "Chart.js", "Vercel"],
+      description: "Developed a full-stack Phishing URL Detection System to analyze URLs and classify phishing threats using an intuitive web interface.",
+      technologies: ["React.js", "Vite", "Firebase", "Firestore", "Chart.js", "JavaScript", "HTML", "CSS", "Vercel"],
       github: "#",
       liveDemo: "#",
-      category: "Cyber Security & Web",
+      category: "Personal Project",
       date: "2024",
       image: "/projects/phishing_dashboard.png",
-      features: ["Role-based access control", "Interactive analytics dashboard", "Real-time URL risk scoring"],
-      challenges: "Managing real-time analytics for varying threat types.",
-      solutions: "Integrated Firebase/Firestore with Chart.js for responsive visualizations.",
-      results: "Deployed successfully on Vercel with light and dark themes."
+      features: [
+        "Built secure authentication with role-based access control, enabling separate dashboards for administrators and users.",
+        "Designed an interactive analytics dashboard with Chart.js to visualize phishing trends, detection statistics, and user activity.",
+        "Implemented URL risk scoring, phishing report history, and real-time validation with responsive UI using React.js and Vite."
+      ],
+      challenges: "Managing state and real-time validations efficiently.",
+      solutions: "Integrated Firebase/Firestore and LocalStorage for data persistence, user management, and application state handling.",
+      results: "Deployed the application on Vercel with modern responsive design supporting both light and dark themes."
     },
     {
       id: 2,
-      title: "Theme Chess – Multi-Theme Platform",
-      description: "A modern web-based chess platform supporting multiple visual themes including Pokémon, Anime, Doraemon, and Classic Chess.",
-      technologies: ["React.js", "TypeScript", "Tailwind CSS", "Framer Motion", "chess.js"],
-      github: "#",
-      liveDemo: "#",
-      category: "Web Development",
-      date: "2024",
-      image: "/projects/theme_chess.png",
-      features: ["Interactive chessboard with legal move validation", "Move history and captured pieces tracking", "Multiple theme switching without reloading"],
-      challenges: "Adding new themes without modifying core gameplay logic.",
-      solutions: "Designed a scalable architecture with reusable components and efficient state management.",
-      results: "Smooth animations and theme transitions using Framer Motion and Tailwind CSS."
-    },
-    {
-      id: 3,
-      title: "Farm Market – Smart Marketplace",
-      description: "A responsive e-commerce platform connecting farmers and consumers through a modern digital marketplace.",
+      title: "Farm Market – Smart Agricultural Marketplace",
+      description: "Developed a responsive e-commerce platform connecting farmers and consumers through a modern digital marketplace.",
       technologies: ["React.js", "Framer Motion", "JavaScript", "HTML", "CSS"],
       github: "#",
       liveDemo: "#",
-      category: "E-commerce & Web",
+      category: "Web Programming Project",
       date: "2024",
       image: "/projects/farm_market.png",
-      features: ["Immersive landing page with cinematic animations", "Product browsing, category filtering, and shopping workflow", "Administrator portal for managing inventory"],
-      challenges: "Creating highly interactive and cinematic product introductions.",
-      solutions: "Utilized Framer Motion for scroll-linked animations and smooth page transitions.",
-      results: "Optimized UI responsiveness across desktop and mobile devices."
+      features: [
+        "Designed an immersive landing page featuring cinematic Framer Motion animations with interactive product introduction.",
+        "Implemented product browsing, category filtering, shopping workflow, and responsive user interface.",
+        "Built an administrator portal for managing products, inventory, and customer information."
+      ],
+      challenges: "Ensuring smooth animations and optimal user experience across all devices.",
+      solutions: "Optimized UI responsiveness and user experience across desktop and mobile devices using Framer Motion and custom CSS.",
+      results: "Delivered a performant, highly interactive marketplace connecting consumers and farmers."
     },
     {
-      id: 4,
-      title: "Chess Coaching Portal",
-      description: "A web-based coaching platform for managing chess students, learning resources, and online class scheduling.",
-      technologies: ["React.js", "JavaScript", "Firebase", "HTML", "CSS"],
-      github: "#",
-      liveDemo: "#",
-      category: "EdTech & Web",
-      date: "2024",
-      image: "/projects/chess_coaching.png",
-      features: ["Secure login with role-based access", "Student dashboards with study materials and progress tracking", "Interactive chessboard for notation practice"],
-      challenges: "Organizing multiple types of resources (PDFs, videos) for various students.",
-      solutions: "Developed an administrative panel for managing students and structuring learning materials.",
-      results: "Streamlined workflow for coaches to generate credentials and schedule online classes."
-    },
-    {
-      id: 5,
+      id: 3,
       title: "MindVault – Smart Memory Organizer",
-      description: "A smart knowledge management application implementing multiple Data Structures and Algorithms.",
+      description: "Developed a smart knowledge management application implementing multiple Data Structures and Algorithms for efficient note organization.",
       technologies: ["Java", "Data Structures", "Algorithms"],
       github: "#",
       liveDemo: "#",
-      category: "Software Engineering",
+      category: "DSA Project",
       date: "2024",
       image: "/projects/mind_vault.png",
-      features: ["Optimized search & retrieval using Hash Maps and BST", "Priority-based note management using Heaps", "Graph-based relationship mapping"],
-      challenges: "Efficiently organizing, sorting, and scheduling notes based on priority.",
-      solutions: "Implemented Heaps for priority management, Stacks for undo, and Queues for reminders.",
-      results: "Achieved contextual navigation and highly efficient note discovery."
+      features: [
+        "Designed optimized search and retrieval using Hash Maps, Binary Search Trees, and Binary Search algorithms.",
+        "Implemented priority-based note management using Heaps, undo functionality using Stacks, and reminder scheduling using Queues.",
+        "Built graph-based relationship mapping between notes to improve contextual navigation and knowledge discovery."
+      ],
+      challenges: "Efficiently organizing, sorting, and scheduling notes based on priority and relationships.",
+      solutions: "Applied sorting algorithms for efficient organization of notes based on title, priority, and timestamps.",
+      results: "Achieved highly optimized contextual navigation and rapid knowledge discovery."
     }
   ],
   experience: [

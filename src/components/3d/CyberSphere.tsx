@@ -23,16 +23,20 @@ export const CyberSphere = () => {
       new THREE.Color("#a8ff78"), // Neon Green
     ];
 
+    const goldenRatio = (1 + Math.sqrt(5)) / 2;
+    const angleIncrement = Math.PI * 2 * goldenRatio;
+
     for (let i = 0; i < count; i++) {
-      // Golden ratio spiral for even distribution
-      const phi = Math.acos(-1 + (2 * i) / count);
-      const theta = Math.sqrt(count * Math.PI) * phi;
+      // Fibonacci sphere for even distribution
+      const t = i / count;
+      const phi = Math.acos(1 - 2 * t);
+      const theta = angleIncrement * i;
 
       // Add random noise to positions for an organic cloud look
       const noise = (Math.random() - 0.5) * 0.5;
 
-      const x = (radius + noise) * Math.cos(theta) * Math.sin(phi);
-      const y = (radius + noise) * Math.sin(theta) * Math.sin(phi);
+      const x = (radius + noise) * Math.sin(phi) * Math.cos(theta);
+      const y = (radius + noise) * Math.sin(phi) * Math.sin(theta);
       const z = (radius + noise) * Math.cos(phi);
 
       positions.push(x, y, z);
@@ -68,7 +72,7 @@ export const CyberSphere = () => {
       
       <group>
         {/* Outer Data Particle Sphere */}
-        <Points ref={ref} positions={positions} colors={colors} stride={3}>
+        <Points ref={ref} positions={positions} colors={colors} stride={3} renderOrder={2}>
           <PointMaterial
             transparent
             vertexColors
@@ -80,9 +84,9 @@ export const CyberSphere = () => {
         </Points>
         
         {/* Inner dark core to hide back particles slightly and give depth */}
-        <mesh>
+        <mesh renderOrder={1}>
           <sphereGeometry args={[1.2, 32, 32]} />
-          <meshBasicMaterial color="#03050c" transparent opacity={0.7} />
+          <meshBasicMaterial color="#03050c" transparent opacity={0.7} depthWrite={false} />
         </mesh>
       </group>
     </>

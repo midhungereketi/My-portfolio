@@ -6,45 +6,57 @@ export const Preloader = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(timer);
-          setTimeout(() => setIsLoading(false), 500);
-          return 100;
-        }
-        return prev + Math.floor(Math.random() * 15) + 5;
-      });
+    let current = 0;
+    const interval = setInterval(() => {
+      current += Math.floor(Math.random() * 10) + 5;
+      if (current >= 100) {
+        current = 100;
+        setProgress(current);
+        clearInterval(interval);
+        setTimeout(() => setIsLoading(false), 500); // Small delay before hiding
+      } else {
+        setProgress(current);
+      }
     }, 100);
 
-    return () => clearInterval(timer);
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          initial={{ y: 0 }}
-          exit={{ y: '-100%', transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }}
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#03050c] text-white"
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0, y: "-100%" }}
+          transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
+          className="fixed inset-0 z-[10000] bg-background flex flex-col justify-end p-8 md:p-16"
         >
-          <div className="relative w-full max-w-sm px-8 overflow-hidden">
-             <motion.div 
-                className="text-[12vw] md:text-[8rem] font-space font-bold leading-none tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-primary to-quaternary"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-             >
-                {Math.min(progress, 100)}%
-             </motion.div>
-             <div className="absolute bottom-0 left-8 right-8 h-1 bg-white/10 overflow-hidden rounded-full mt-4">
-                <motion.div 
-                   className="h-full bg-primary"
-                   initial={{ width: 0 }}
-                   animate={{ width: `${Math.min(progress, 100)}%` }}
-                   transition={{ duration: 0.1 }}
-                />
-             </div>
+          <div className="flex justify-between items-end">
+            <div className="overflow-hidden">
+              <motion.h1 
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                className="text-4xl md:text-8xl editorial-heading"
+              >
+                Midhun
+                <br />
+                Gereketi
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="font-sans text-textMuted uppercase tracking-widest mt-4 text-xs md:text-sm"
+              >
+                Cyber security Student
+              </motion.p>
+            </div>
+            <div className="text-right">
+              <span className="font-mono text-6xl md:text-9xl text-primary font-light">
+                {progress}%
+              </span>
+            </div>
           </div>
         </motion.div>
       )}
