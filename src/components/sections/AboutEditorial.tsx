@@ -37,11 +37,11 @@ export const AboutEditorial = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-32 px-4 sm:px-8 lg:px-16 bg-cream relative">
-      <div className="max-w-[1600px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
+    <section ref={containerRef} className="min-h-screen py-16 md:py-24 px-4 sm:px-8 lg:px-16 bg-cream relative flex items-center">
+      <div className="max-w-[1600px] mx-auto w-full">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">
           
-          <div className="md:col-span-4 flex flex-col justify-between">
+          <div className="md:col-span-4 flex flex-col">
             <h2 className="text-sm font-mono uppercase tracking-widest text-textMuted mb-8 about-text-reveal">
               01 / The Narrative
             </h2>
@@ -49,7 +49,7 @@ export const AboutEditorial = () => {
               <img 
                 src="/profile.jpg" 
                 alt="Midhun Gereketi" 
-                className="absolute inset-0 w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" 
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-cream via-cream/40 to-transparent opacity-90 transition-opacity duration-700" />
               <p className="font-editorial text-2xl italic text-charcoal relative z-10 font-semibold drop-shadow-md">
@@ -58,8 +58,8 @@ export const AboutEditorial = () => {
             </div>
           </div>
           
-          <div className="md:col-span-8 flex flex-col pt-12 md:pt-32">
-            <h3 className="editorial-heading text-4xl md:text-7xl mb-12 about-text-reveal leading-tight">
+          <div className="md:col-span-8 flex flex-col md:pt-14">
+            <h3 className="editorial-heading text-4xl md:text-6xl lg:text-7xl mb-12 about-text-reveal leading-tight">
               A commitment to engineering robust backend architectures and scalable data pipelines.
             </h3>
             
@@ -80,11 +80,11 @@ export const AboutEditorial = () => {
               </div>
             </div>
             
-            <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="mt-16 md:mt-24 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
               {portfolioData.about.stats.map((stat, i) => (
                 <div key={i} className="flex flex-col about-text-reveal border-l border-primary/20 pl-4">
                   <span className="font-editorial text-4xl md:text-5xl text-primary">{stat.value}</span>
-                  <span className="font-mono text-xs uppercase text-textMuted mt-2 tracking-wider">{stat.label}</span>
+                  <span className="font-mono text-[10px] md:text-xs uppercase text-textMuted mt-2 tracking-wider">{stat.label}</span>
                 </div>
               ))}
             </div>

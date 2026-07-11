@@ -20,9 +20,9 @@ export const ProjectsShowcase = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           pin: true,
-          scrub: 1,
+          scrub: 0.5,
           snap: 1 / (sections.length - 1),
-          end: () => "+=" + scrollWrapperRef.current?.offsetWidth
+          end: () => "+=" + (scrollWrapperRef.current?.offsetWidth ? scrollWrapperRef.current.offsetWidth * 0.5 : 0)
         }
       });
     }, sectionRef);
@@ -91,7 +91,7 @@ export const ProjectsShowcase = () => {
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
                 
                 {/* Optional Custom Cursor target label could go here, handled by global cursor */}

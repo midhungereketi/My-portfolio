@@ -85,9 +85,13 @@ export const HeroEditorial = () => {
           <p className="font-editorial text-xl md:text-4xl italic text-secondary">
             AI Engineer & Cyber Security Student
           </p>
-          <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-primary flex items-center justify-center animate-bounce shrink-0">
+          <button 
+            onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-primary flex items-center justify-center animate-bounce shrink-0 cursor-pointer hover:bg-primary hover:text-background transition-colors"
+            aria-label="Scroll down"
+          >
             ↓
-          </div>
+          </button>
         </div>
       </div>
     </section>
