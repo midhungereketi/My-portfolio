@@ -4,9 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export const ExperienceTimeline = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
-
   return (
-    <section className="py-32 px-4 sm:px-8 lg:px-16 bg-cream border-t border-primary/10">
+    <section className="py-32 px-4 sm:px-8 lg:px-16 bg-surface/90 backdrop-blur-md border-t border-primary/10">
       <div className="max-w-[1200px] mx-auto">
         <h2 className="editorial-heading text-5xl md:text-7xl mb-24 text-center">
           Career <span className="italic text-tertiary">&</span> Evolution

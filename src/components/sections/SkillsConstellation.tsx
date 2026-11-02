@@ -26,7 +26,7 @@ export const SkillsConstellation = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-32 px-4 sm:px-8 lg:px-16 bg-background relative overflow-hidden border-y border-primary/10">
+    <section ref={containerRef} className="py-32 px-4 sm:px-8 lg:px-16 bg-background/80 backdrop-blur-md relative overflow-hidden border-y border-primary/10">
       <div className="max-w-[1600px] mx-auto relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-start mb-24">
           <h2 className="editorial-heading text-5xl md:text-8xl">Architecture<br/><span className="text-tertiary italic">& Ecosystem</span></h2>

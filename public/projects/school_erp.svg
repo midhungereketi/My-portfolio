@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" font-family="IBM Plex Mono, ui-monospace, monospace">
+  <rect width="1600" height="1000" fill="#f2f2f0"/>
+  <text x="60" y="78" fill="#111" font-size="22" letter-spacing="4">SMART SCHOOL ERP</text>
+  <text x="1540" y="78" fill="#6d6d6a" font-size="18" text-anchor="end" letter-spacing="3">REACT · SUPABASE · ANDROID</text>
+  <path d="M60 120H1540" stroke="#111"/>
+  <text x="60" y="180" fill="#6d6d6a" font-size="16" letter-spacing="2">ROLE PORTALS</text>
+  <g font-family="Archivo, Arial Narrow, sans-serif" font-weight="800" font-size="24">
+    <rect x="60" y="205" width="200" height="86" fill="#111"/><text x="80" y="258" fill="#f2f2f0">ADMIN</text>
+    <rect x="270" y="205" width="200" height="86" fill="none" stroke="#111" stroke-width="2"/><text x="290" y="258" fill="#111">FACULTY</text>
+    <rect x="480" y="205" width="200" height="86" fill="none" stroke="#111" stroke-width="2"/><text x="500" y="258" fill="#111">STUDENT</text>
+    <rect x="690" y="205" width="200" height="86" fill="none" stroke="#111" stroke-width="2"/><text x="710" y="258" fill="#111">PARENT</text>
+    <rect x="60" y="301" width="200" height="86" fill="none" stroke="#111" stroke-width="2"/><text x="80" y="354" fill="#111">ACADEMIC</text>
+    <rect x="270" y="301" width="200" height="86" fill="none" stroke="#111" stroke-width="2"/><text x="290" y="354" fill="#111">FINANCE</text>
+    <rect x="480" y="301" width="200" height="86" fill="none" stroke="#111" stroke-width="2"/><text x="500" y="354" fill="#111">TRANSPORT</text>
+    <rect x="690" y="301" width="200" height="86" fill="none" stroke="#111" stroke-width="2"/><text x="710" y="354" fill="#111">LIBRARY</text>
+  </g>
+  <g transform="translate(980 160)">
+    <rect width="560" height="440" fill="#111"/>
+    <text x="30" y="50" fill="#f2f2f0" font-size="16" letter-spacing="2">STUDENT SUPPORT RADAR</text>
+    <g fill="none" stroke="#f2f2f033"><circle cx="280" cy="250" r="160"/><circle cx="280" cy="250" r="105"/><circle cx="280" cy="250" r="50"/><path d="M280 90V410M120 250H440"/></g>
+    <path d="M280 250L420 170A160 160 0 0 0 280 90Z" fill="#f2f2f018"/>
+    <circle cx="350" cy="190" r="9" fill="#f2f2f0"/><circle cx="215" cy="300" r="7" fill="#f2f2f0"/><circle cx="330" cy="330" r="7" fill="#9a9a97"/>
+    <text x="364" y="186" fill="#f2f2f0" font-size="13">ATTENDANCE ↓</text>
+    <text x="96" y="318" fill="#f2f2f0" font-size="13">OVERDUE WORK</text>
+    <text x="30" y="420" fill="#9a9a97" font-size="13">EXPLAINED SIGNALS · REVIEW PROMPTS</text>
+  </g>
+  <text x="60" y="470" fill="#6d6d6a" font-size="16" letter-spacing="2">SCHEDULE HEALTH AUDIT · TIMETABLE</text>
+  <g font-size="15">
+    <g fill="#6d6d6a"><text x="160" y="510">MON</text><text x="320" y="510">TUE</text><text x="480" y="510">WED</text><text x="640" y="510">THU</text><text x="800" y="510">FRI</text>
+    <text x="60" y="563">09:00</text><text x="60" y="633">10:00</text><text x="60" y="703">11:00</text></g>
+    <g fill="none" stroke="#111" stroke-width="2">
+      <rect x="310" y="530" width="150" height="54"/><rect x="470" y="530" width="150" height="54"/><rect x="630" y="530" width="150" height="54"/><rect x="790" y="530" width="150" height="54"/>
+      <rect x="150" y="600" width="150" height="54"/><rect x="310" y="600" width="150" height="54"/><rect x="470" y="600" width="150" height="54"/><rect x="630" y="600" width="150" height="54"/><rect x="790" y="600" width="150" height="54"/>
+      <rect x="150" y="670" width="150" height="54"/><rect x="310" y="670" width="150" height="54"/><rect x="470" y="670" width="150" height="54"/><rect x="630" y="670" width="150" height="54"/><rect x="790" y="670" width="150" height="54"/>
+    </g>
+    <rect x="150" y="530" width="150" height="54" fill="#111"/><text x="164" y="563" fill="#f2f2f0">ROOM CLASH</text>
+    <g fill="#111"><text x="324" y="563">MATHS 8A</text><text x="484" y="563">PHYSICS</text><text x="644" y="563">ENGLISH</text><text x="804" y="563">CHEM LAB</text>
+    <text x="164" y="633">BIOLOGY</text><text x="324" y="633">HISTORY</text><text x="484" y="633">MATHS 9B</text><text x="644" y="633">COMPUTER</text><text x="804" y="633">TELUGU</text>
+    <text x="164" y="703">SPORTS</text><text x="324" y="703">ART</text><text x="484" y="703">LIBRARY</text><text x="644" y="703">CIVICS</text><text x="804" y="703">MUSIC</text></g>
+  </g>
+  <g transform="translate(980 650)">
+    <text fill="#6d6d6a" font-size="16" letter-spacing="2">MODULES</text>
+    <g fill="#111" font-size="17">
+      <text y="44">/ ADMISSIONS &amp; ENROLMENT</text><text y="78">/ ATTENDANCE &amp; RECOVERY SIMULATOR</text><text y="112">/ EXAMS, MARKS &amp; REPORT CARDS</text><text y="146">/ FEES, INVOICES &amp; RECEIPTS</text><text y="180">/ SUBSTITUTE PLANNER · AI STUDY COACH</text>
+    </g>
+  </g>
+  <path d="M60 880H1540" stroke="#111"/>
+  <text x="60" y="935" fill="#6d6d6a" font-size="16" letter-spacing="2">WEB APP + ANDROID (CAPACITOR) · ROLE-BASED ACCESS · PRIVATE FILE STORAGE</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" font-family="IBM Plex Mono, ui-monospace, monospace">
+  <rect width="1600" height="1000" fill="#0e0e0e"/>
+  <g stroke="#ffffff10"><path d="M0 120H1600M0 880H1600M420 120V880"/></g>
+  <text x="60" y="78" fill="#f2f2f0" font-size="22" letter-spacing="4">SOC CONSOLE</text>
+  <text x="1540" y="78" fill="#7a7a77" font-size="18" text-anchor="end" letter-spacing="3">MONGODB · POSTGRESQL · REACT</text>
+  <g font-size="17" letter-spacing="1">
+    <text x="60" y="180" fill="#7a7a77">EVENTS / 24H</text>
+    <text x="60" y="260" fill="#f2f2f0" font-size="72" font-family="Archivo, Arial Narrow, sans-serif" font-weight="800">1.02M</text>
+    <text x="60" y="350" fill="#7a7a77">OPEN ALERTS</text>
+    <text x="60" y="430" fill="#ff4d5e" font-size="72" font-family="Archivo, Arial Narrow, sans-serif" font-weight="800">37</text>
+    <text x="60" y="520" fill="#7a7a77">INCIDENTS</text>
+    <text x="60" y="600" fill="#f2f2f0" font-size="72" font-family="Archivo, Arial Narrow, sans-serif" font-weight="800">06</text>
+    <text x="60" y="700" fill="#7a7a77">TOP SOURCE</text>
+    <text x="60" y="740" fill="#f2f2f0">10.0.4.27</text>
+    <text x="60" y="790" fill="#7a7a77">DETECTORS</text>
+    <text x="60" y="830" fill="#f2f2f0">BRUTE-FORCE · PORT-SCAN</text>
+  </g>
+  <g transform="translate(470 160)">
+    <text fill="#7a7a77" font-size="16" letter-spacing="2">EVENT TIMELINE</text>
+    <g fill="#f2f2f0">
+      <rect x="0" y="210" width="34" height="60"/><rect x="44" y="180" width="34" height="90"/><rect x="88" y="200" width="34" height="70"/><rect x="132" y="150" width="34" height="120"/><rect x="176" y="170" width="34" height="100"/><rect x="220" y="190" width="34" height="80"/><rect x="264" y="120" width="34" height="150"/><rect x="308" y="160" width="34" height="110"/><rect x="352" y="140" width="34" height="130"/>
+      <rect x="396" y="40" width="34" height="230" fill="#ff4d5e"/><rect x="440" y="60" width="34" height="210" fill="#ff4d5e"/>
+      <rect x="484" y="150" width="34" height="120"/><rect x="528" y="180" width="34" height="90"/><rect x="572" y="170" width="34" height="100"/><rect x="616" y="200" width="34" height="70"/><rect x="660" y="160" width="34" height="110"/><rect x="704" y="190" width="34" height="80"/><rect x="748" y="210" width="34" height="60"/><rect x="792" y="175" width="34" height="95"/><rect x="836" y="195" width="34" height="75"/><rect x="880" y="205" width="34" height="65"/><rect x="924" y="185" width="34" height="85"/><rect x="968" y="200" width="34" height="70"/>
+    </g>
+    <text x="396" y="25" fill="#ff4d5e" font-size="15">▲ SPIKE · FAILED LOGINS</text>
+    <g font-size="17" transform="translate(0 340)">
+      <text fill="#7a7a77" font-size="16" letter-spacing="2">LIVE LOG STREAM</text>
+      <text y="50" fill="#f2f2f0">03:14:07  auth    FAIL   user=admin  src=10.0.4.27</text>
+      <text y="90" fill="#f2f2f0">03:14:07  auth    FAIL   user=admin  src=10.0.4.27</text>
+      <text y="130" fill="#ff4d5e">03:14:08  detect  ALERT  brute_force  severity=HIGH  → incident #0412</text>
+      <text y="170" fill="#9a9a97">03:14:11  net     PROBE  dst_ports=22,80,443,3389  src=10.0.9.3</text>
+      <text y="210" fill="#ff4d5e">03:14:12  detect  ALERT  port_scan  severity=MEDIUM</text>
+      <text y="250" fill="#9a9a97">03:14:15  auth    OK     user=analyst  role=SOC_L1</text>
+      <text y="290" fill="#9a9a97">03:14:19  case    ASSIGN incident #0412 → analyst</text>
+    </g>
+  </g>
+  <text x="60" y="935" fill="#7a7a77" font-size="16" letter-spacing="2">INTELLIGENT CYBERSECURITY LOG MANAGEMENT SYSTEM</text>
+</svg>

@@ -2,7 +2,7 @@ import { portfolioData } from '../../data/portfolioData';
 
 export const ContactFooter = () => {
   return (
-    <section className="bg-background relative pt-32 pb-12 px-4 sm:px-8 lg:px-16 overflow-hidden">
+    <section className="bg-background/80 backdrop-blur-md relative pt-32 pb-12 px-4 sm:px-8 lg:px-16 overflow-hidden">
       {/* Massive subtle background typography */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none opacity-[0.02]">
         <h2 className="font-editorial text-[25vw] leading-none whitespace-nowrap">Collaborate</h2>

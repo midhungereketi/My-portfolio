@@ -37,7 +37,7 @@ export const AboutEditorial = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="min-h-screen py-16 md:py-24 px-4 sm:px-8 lg:px-16 bg-cream relative flex items-center">
+    <section ref={containerRef} className="min-h-screen py-16 md:py-24 px-4 sm:px-8 lg:px-16 bg-cream/80 backdrop-blur-md relative flex items-center">
       <div className="max-w-[1600px] mx-auto w-full">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">
           

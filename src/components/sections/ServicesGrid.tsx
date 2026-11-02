@@ -41,7 +41,7 @@ export const ServicesGrid = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-32 px-4 sm:px-8 lg:px-16 bg-surface">
+    <section ref={containerRef} className="py-32 px-4 sm:px-8 lg:px-16 bg-surface/80 backdrop-blur-md">
       <div className="max-w-[1600px] mx-auto">
         <h2 className="editorial-heading text-3xl md:text-4xl lg:text-6xl mb-16 md:mb-24 max-w-3xl leading-tight">
           Delivering high-performance, intelligent systems tailored for the modern enterprise.

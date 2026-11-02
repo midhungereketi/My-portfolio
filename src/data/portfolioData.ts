@@ -13,11 +13,11 @@ export const portfolioData = {
       "Tech Enthusiast",
       "AI Integrator"
     ],
-    resumeUrl: "https://drive.google.com/file/d/1lzEV6l51oG0mn7oYuDaY3AGDBBJ-hPTO/view?usp=drive_link",
+    resumeUrl: "https://drive.google.com/file/d/1oSmfZaRusmDEjgpuMvg3jx5IqHq-cogR/view?usp=sharing",
     contactEmail: "midhungereketi@gmail.com",
     socials: {
       github: "https://github.com/midhungereketi",
-      linkedin: "https://linkedin.com/in/midhungereketi",
+      linkedin: "https://www.linkedin.com/in/midhun-gereketi-5b2084322/",
       twitter: "https://twitter.com"
     }
   },
@@ -50,60 +50,98 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
-      title: "Phishing URL Detection System",
-      description: "Developed a full-stack Phishing URL Detection System to analyze URLs and classify phishing threats using an intuitive web interface.",
-      technologies: ["React.js", "Vite", "Firebase", "Firestore", "Chart.js", "JavaScript", "HTML", "CSS", "Vercel"],
-      github: "#",
-      liveDemo: "#",
-      category: "Personal Project",
-      date: "2024",
-      image: "/projects/phishing_dashboard.png",
+      title: "PhishGuard – ML Phishing Detection",
+      description: "A machine-learning security workspace that classifies suspicious URLs and emails, explains the warning signs and blocks risky hosts, with a companion browser extension.",
+      technologies: ["React", "Vite", "FastAPI", "scikit-learn", "Postgres", "Chrome Extension", "Vercel"],
+      github: "https://github.com/midhungereketi/phishing-detector",
+      liveDemo: "https://phishing-detector-pink.vercel.app",
+      category: "Computer Networks · Security",
+      date: "2026",
+      image: "/projects/phishguard.png",
       features: [
-        "Built secure authentication with role-based access control, enabling separate dashboards for administrators and users.",
-        "Designed an interactive analytics dashboard with Chart.js to visualize phishing trends, detection statistics, and user activity.",
-        "Implemented URL risk scoring, phishing report history, and real-time validation with responsive UI using React.js and Vite."
+        "URL classifier trained on 21 lexical and domain-structure features with a Random Forest; email classifier using TF-IDF + Logistic Regression plus header, link and attachment inspection.",
+        "Model Lab with real metrics, confusion matrices, calibration curves, Brier scores and feature importance, plus cached PhishTank matching and opt-in DNS, TLS, RDAP and VirusTotal checks.",
+        "Chrome/Edge Manifest V3 extension with scoped pairing tokens, click warnings and synced host blocking, backed by hashed passwords, HttpOnly sessions and admin audit logs."
       ],
-      challenges: "Managing state and real-time validations efficiently.",
-      solutions: "Integrated Firebase/Firestore and LocalStorage for data persistence, user management, and application state handling.",
-      results: "Deployed the application on Vercel with modern responsive design supporting both light and dark themes."
+      challenges: "Replacing a browser-only heuristic scanner with trained models while keeping results explainable and never contacting a target unless the user opts in.",
+      solutions: "Trained and calibrated separate URL and email models behind a FastAPI service, combined them with transparent risk-policy floors, and exposed every signal in the UI and reports.",
+      results: "Deployed on Vercel with a Postgres backend; users get immediate risk alerts, scan history and downloadable PDF/JSON security reports."
     },
     {
       id: 2,
-      title: "Farm Market – Smart Agricultural Marketplace",
-      description: "Developed a responsive e-commerce platform connecting farmers and consumers through a modern digital marketplace.",
-      technologies: ["React.js", "Framer Motion", "JavaScript", "HTML", "CSS"],
-      github: "#",
-      liveDemo: "#",
-      category: "Web Programming Project",
-      date: "2024",
-      image: "/projects/farm_market.png",
+      title: "Intelligent Cybersecurity Log Management System",
+      description: "A Security Operations Center platform that ingests security logs into MongoDB, detects suspicious activity, and drives alert triage and incident response from a React dashboard.",
+      technologies: ["Python", "MongoDB", "PostgreSQL", "React", "JWT", "Argon2id"],
+      github: "https://github.com/midhungereketi/Intelligent-Cybersecurity-Log-Management-Systems",
+      liveDemo: "",
+      category: "Database Systems · Team of 3",
+      date: "2026",
+      image: "/projects/cyber_logs.svg",
       features: [
-        "Designed an immersive landing page featuring cinematic Framer Motion animations with interactive product introduction.",
-        "Implemented product browsing, category filtering, shopping workflow, and responsive user interface.",
-        "Built an administrator portal for managing products, inventory, and customer information."
+        "Single-event API and CSV/JSON/JSONL bulk upload into indexed MongoDB collections, benchmarked on a million-log search.",
+        "Detection engine for failed logins, port-scan probes and excessive activity, with checkpointing, pagination and replay-safe deduplication.",
+        "PostgreSQL schema for users, roles, rules, threats, alerts and incidents, secured with Argon2id hashing, HS256 JWT, RBAC and rate limiting."
       ],
-      challenges: "Ensuring smooth animations and optimal user experience across all devices.",
-      solutions: "Optimized UI responsiveness and user experience across desktop and mobile devices using Framer Motion and custom CSS.",
-      results: "Delivered a performant, highly interactive marketplace connecting consumers and farmers."
+      challenges: "Keeping high-volume log search fast while relational security data (users, alerts, incidents) stayed consistent across two databases.",
+      solutions: "Split storage by workload: MongoDB for indexed log search, PostgreSQL for the security schema, joined by cross-database analytics for the SOC console.",
+      results: "A working SOC console with log search, hourly timelines, attacker IP rankings, alert escalation and incident investigation."
     },
     {
       id: 3,
-      title: "MindVault – Smart Memory Organizer",
-      description: "Developed a smart knowledge management application implementing multiple Data Structures and Algorithms for efficient note organization.",
-      technologies: ["Java", "Data Structures", "Algorithms"],
-      github: "#",
-      liveDemo: "#",
-      category: "DSA Project",
-      date: "2024",
-      image: "/projects/mind_vault.png",
+      title: "Predictive Deadlock Lab",
+      description: "An operating-systems research lab that makes real threads deadlock, confirms the cycle with a Wait-For Graph, and warns before it forms using a weighted 0–100 risk score.",
+      technologies: ["Python", "FastAPI", "JavaScript", "Playwright", "Vercel"],
+      github: "https://github.com/midhungereketi/predictive-deadlock-lab",
+      liveDemo: "https://predictive-deadlock-lab.vercel.app",
+      category: "Operating Systems · Research",
+      date: "2026",
+      image: "/projects/deadlock_lab.png",
       features: [
-        "Designed optimized search and retrieval using Hash Maps, Binary Search Trees, and Binary Search algorithms.",
-        "Implemented priority-based note management using Heaps, undo functionality using Stacks, and reminder scheduling using Queues.",
-        "Built graph-based relationship mapping between notes to improve contextual navigation and knowledge discovery."
+        "Two-thread and N-thread ring experiments (2–32 threads) with a supervisor that detects the cycle and recovers by aborting a thread; protected mode enforces a learned global lock order.",
+        "Animated replay of every run from its real event log, with step controls, narrated captions and a per-event risk-factor breakdown.",
+        "Compare view with repeated trials, scaling tests (mean ± sd), live weight sliders and CSV export; scoring logic tested in both Python and JavaScript against shared cases."
       ],
-      challenges: "Efficiently organizing, sorting, and scheduling notes based on priority and relationships.",
-      solutions: "Applied sorting algorithms for efficient organization of notes based on title, priority, and timestamps.",
-      results: "Achieved highly optimized contextual navigation and rapid knowledge discovery."
+      challenges: "Turning a non-deterministic concurrency bug into something you can measure, replay and explain.",
+      solutions: "Logged every lock event from real threads, scored contention with a documented heuristic, and rebuilt each run visually from the log.",
+      results: "A deployed lab with saved measurement sets showing warning lead time before deadlock and 100% completion in protected mode."
+    },
+    {
+      id: 4,
+      title: "DP-FCFS – Predictive Cloud Task Scheduler",
+      description: "An intelligent cloud task-scheduling and visualization system built on First Come First Serve, extended with predictive analysis of queue and execution dynamics.",
+      technologies: ["React", "Vite", "Tailwind CSS", "Flask", "SQLite", "Chart.js"],
+      github: "https://github.com/midhungereketi/DP-FCFS",
+      liveDemo: "",
+      category: "Cloud Computing",
+      date: "2026",
+      image: "/projects/dp_fcfs.svg",
+      features: [
+        "FCFS scheduling engine that models task arrival, queueing and execution across cloud resources.",
+        "Interactive visualizations of queue state, Gantt-style execution timelines and performance metrics with Chart.js.",
+        "React + Flask architecture with SQLite persistence for tasks and scheduling runs."
+      ],
+      challenges: "Making a simple scheduling policy observable enough to reason about waiting time and utilization.",
+      solutions: "Paired the FCFS engine with predictive metrics and rich visual timelines so every scheduling decision can be inspected.",
+      results: "A visual scheduling sandbox for comparing task loads and understanding queue behaviour."
+    },
+    {
+      id: 5,
+      title: "Smart School ERP",
+      description: "A complete school management platform with dedicated portals for administrators, faculty, students, parents, academic staff, finance, transport and library — on the web and as an Android app.",
+      technologies: ["React", "Vite", "Supabase", "PostgreSQL", "Capacitor", "Android", "Groq AI"],
+      github: "",
+      liveDemo: "",
+      category: "Full-Stack · Web + Android",
+      date: "2026",
+      image: "/projects/school_erp.svg",
+      features: [
+        "Role-based portals covering admissions, attendance, timetables, exams and marks, assignments, fees and invoices, transport, library, notices and leave, with server-side permissions and private file storage on Supabase.",
+        "Student Support Radar joins attendance, overdue work and recent results into explainable support signals; an Attendance Recovery Simulator shows students and parents exactly what it takes to reach a target.",
+        "Schedule Health Audit and an Automatic Substitute Planner catch teacher, class and room clashes before they reach a school day, alongside an AI Study Coach with moderation and daily limits."
+      ],
+      challenges: "Serving eight different roles from one system while keeping every user's data, files and permissions strictly separated.",
+      solutions: "Built on Supabase Auth with database-level permissions and private storage, administrator-managed accounts, and one shared data model that powers every portal.",
+      results: "Deployed to live school accounts with a published Android app, CSV/JSON exports, printable schedules and receipts, and automated browser regression tests."
     }
   ],
   experience: [

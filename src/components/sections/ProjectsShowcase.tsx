@@ -31,7 +31,7 @@ export const ProjectsShowcase = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="h-screen bg-charcoal text-background overflow-hidden relative">
+    <section ref={sectionRef} className="h-screen bg-charcoal/95 backdrop-blur-md text-background overflow-hidden relative">
       <div className="absolute top-8 left-4 sm:left-8 lg:left-16 z-10 flex w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] lg:w-[calc(100%-8rem)] justify-between items-center mix-blend-difference">
         <div>
           <h2 className="font-editorial text-4xl text-background">Selected Works</h2>
