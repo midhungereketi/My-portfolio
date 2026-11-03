@@ -13,7 +13,7 @@ export const portfolioData = {
       "Tech Enthusiast",
       "AI Integrator"
     ],
-    resumeUrl: "https://drive.google.com/file/d/1oSmfZaRusmDEjgpuMvg3jx5IqHq-cogR/view?usp=sharing",
+    resumeUrl: "https://drive.google.com/file/d/1BtNcHKynsPuzPWrvD3GJSgvm4J3Uu3jU/view?usp=sharing",
     contactEmail: "midhungereketi@gmail.com",
     socials: {
       github: "https://github.com/midhungereketi",
@@ -147,15 +147,15 @@ export const portfolioData = {
   experience: [
     {
       company: "IBM",
-      role: "Gen AI Summer Intern",
+      role: "Completed Advanced Gen AI Course",
       duration: "2026",
       responsibilities: [
-        "Worked on AI-assisted development and LLM integration.",
-        "Engineered backend systems with integrated third-party APIs.",
-        "Collaborated on real-world AI applications and problem decomposition."
+        "Studied generative AI foundations, large language models and prompt engineering.",
+        "Applied LLM APIs to build and integrate AI-assisted features.",
+        "Explored responsible AI practices for real-world applications."
       ],
-      technologies: ["Generative AI", "LLM", "Backend Systems", "APIs"],
-      achievements: "Gained hands-on experience in enterprise AI applications."
+      technologies: ["Generative AI", "LLM", "Prompt Engineering", "APIs"],
+      achievements: "Completed IBM's Advanced Generative AI course."
     },
     {
       company: "Various Hackathons",
@@ -188,14 +188,6 @@ export const portfolioData = {
       credentialId: "CSCO-123456",
       verifyUrl: "#",
       image: "https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg"
-    },
-    {
-      title: "Advanced Gen AI Certificate",
-      provider: "IBM",
-      issueDate: "2024",
-      credentialId: "IBM-789012",
-      verifyUrl: "#",
-      image: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg"
     }
   ],
   achievements: [

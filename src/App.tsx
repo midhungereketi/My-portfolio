@@ -102,7 +102,7 @@ function Hero() {
     </div>
     <div className="hero-foot">
       <div className="mono-tag">Available for internships <span aria-hidden="true">↘</span><br/><a href={`mailto:${personal.contactEmail}`}>{personal.contactEmail}</a></div>
-      <div className="ticker" aria-hidden="true"><div>{Array.from({ length: 2 }, (_, i) => <span key={i}>B.TECH CYBER SECURITY · VIT VELLORE · GEN AI INTERN @ IBM · THREAT DETECTION · BACKEND SYSTEMS · </span>)}</div></div>
+      <div className="ticker" aria-hidden="true"><div>{Array.from({ length: 2 }, (_, i) => <span key={i}>B.TECH CYBER SECURITY · VIT VELLORE · IBM ADVANCED GEN AI · THREAT DETECTION · BACKEND SYSTEMS · </span>)}</div></div>
       <div className="mono-tag right">Recent work <span aria-hidden="true">↘</span><br/><a href="#works">{projects[0].title.split(' – ')[0]}</a></div>
     </div>
   </section>;
@@ -174,7 +174,7 @@ function Philosophy() {
 const capabilities = [
   { title: 'Secure Development', items: ['Threat detection', 'URL risk scoring', 'Authentication & RBAC', 'Input validation'], body: 'Security works best when it shapes decisions early. I build detection signals, access control and clear feedback into the product itself.', image: projects[0].image },
   { title: 'Full-Stack Web', items: ['React / Vite', 'Node.js / Express', 'Firebase / Firestore', 'Responsive UI'], body: 'From responsive interfaces to dependable backends, I turn requirements into products people can actually use.', image: '/projects/school_erp.svg' },
-  { title: 'AI Integration', items: ['Generative AI', 'Agentic workflows', 'LLM APIs', 'AI-assisted dev'], body: 'Hands-on with LLM integration from my Gen AI internship at IBM — connecting models to real systems and real data.', image: '/projects/enterprise_ai_1.svg' },
+  { title: 'AI Integration', items: ['Generative AI', 'Agentic workflows', 'LLM APIs', 'AI-assisted dev'], body: 'Trained through IBM’s Advanced Gen AI course — connecting LLMs to real systems and real data.', image: '/projects/enterprise_ai_1.svg' },
   { title: 'Data & Analytics', items: ['Snowflake', 'Databricks', 'Chart.js dashboards', 'SQL'], body: 'Turning raw information into something you can read at a glance, from analytics pipelines to live dashboards.', image: '/projects/cyber_logs.svg' },
   { title: 'DSA & Systems', items: ['C++ / Java / Python', 'Data structures', 'Algorithms', 'System design'], body: 'A strong grounding in algorithms and system design — the habit of choosing the right structure before writing the code.', image: '/projects/deadlock_lab.png' },
 ];
