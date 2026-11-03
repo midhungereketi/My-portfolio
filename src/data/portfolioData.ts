@@ -22,9 +22,10 @@ export const portfolioData = {
     }
   },
   about: {
-    introduction: "Motivated B.Tech Cyber Security student with hands-on experience in full-stack development, AI integrations, and backend engineering. Seeking an internship to apply problem-solving skills and technical knowledge toward building efficient, data-driven software solutions.",
-    story: "My journey revolves around complex problem decomposition and analytical reasoning. I enjoy system design thinking and fast self-learning to adapt to new technologies, executing consistently on long, research-oriented projects.",
-    careerGoals: "My goal is to build scalable backend systems, distributed architectures, and real-world AI applications.",
+    pitch: "I build secure web products and explain how they work.",
+    introduction: "B.Tech Cyber Security student at VIT Vellore. I have built a phishing detector with trained ML models, a SOC log platform benchmarked on a million logs, and a school ERP with eight role-based portals. Looking for a security or backend internship.",
+    story: "I like problems I can measure. In Predictive Deadlock Lab we made real threads deadlock and I built the replay that rebuilds every run from its lock events. On the log platform I benchmarked indexed search on a million records before calling it fast. I split a system into parts, test each one, and write down what the numbers do and do not prove.",
+    careerGoals: "Next I want to work on detection pipelines, access control and backend services that hold up under real data.",
     mission: "To engineer robust backend architectures and scalable data pipelines integrated with cutting-edge AI technologies.",
     vision: "A secure, efficient web powered by advanced microservices and AI-assisted development.",
     stats: [
@@ -57,6 +58,15 @@ export const portfolioData = {
       liveDemo: "https://phishing-detector-pink.vercel.app",
       category: "Computer Networks · Security",
       date: "2026",
+      status: "",
+      role: "Solo project — I designed, trained, built and deployed every part: models, API, web app and extension.",
+      outcome: "URL model reached 92.2% accuracy on a 7,839-URL hold-out with no domain overlap; the email model scored 97.1% F1.",
+      metrics: [
+        { value: "92.2%", label: "URL model accuracy" },
+        { value: "97.1%", label: "Email model F1" },
+        { value: "21", label: "URL features" }
+      ],
+      metricsNote: "Corpus test-set metrics at a 0.5 threshold, not real-world accuracy claims.",
       image: "/projects/phishguard.png",
       features: [
         "URL classifier trained on 21 lexical and domain-structure features with a Random Forest; email classifier using TF-IDF + Logistic Regression plus header, link and attachment inspection.",
@@ -76,6 +86,15 @@ export const portfolioData = {
       liveDemo: "",
       category: "Database Systems · Team of 3",
       date: "2026",
+      status: "",
+      role: "Team of 3 — I owned log ingestion and search: the event and bulk-upload APIs, MongoDB indexing, PostgreSQL device metadata and the million-log benchmark.",
+      outcome: "On 1,000,000 logs, indexed search returned in 0.396 ms (median) versus 188 ms for a full scan — about 475× faster for the benchmarked query.",
+      metrics: [
+        { value: "1M", label: "Logs benchmarked" },
+        { value: "0.4 ms", label: "Indexed search, median" },
+        { value: "475×", label: "Faster than a scan" }
+      ],
+      metricsNote: "Measured in CI on a GitHub Actions runner for one source-IP query.",
       image: "/projects/cyber_logs.svg",
       features: [
         "Single-event API and CSV/JSON/JSONL bulk upload into indexed MongoDB collections, benchmarked on a million-log search.",
@@ -95,6 +114,15 @@ export const portfolioData = {
       liveDemo: "https://predictive-deadlock-lab.vercel.app",
       category: "Operating Systems · Research",
       date: "2026",
+      status: "",
+      role: "Team of 3 — I built the frontend: the animated replay, Analysis and Compare views, integration with the experiment API, and deployment.",
+      outcome: "Measured across 2, 4, 8, 16 and 32 threads with 10 trials per mode: vulnerable runs deadlock, protected runs always complete.",
+      metrics: [
+        { value: "2–32", label: "Threads per experiment" },
+        { value: "10", label: "Trials per mode & size" },
+        { value: "100%", label: "Protected-mode completion" }
+      ],
+      metricsNote: "The risk score is a documented heuristic tested in a controlled experiment, not a general deadlock predictor.",
       image: "/projects/deadlock_lab.png",
       features: [
         "Two-thread and N-thread ring experiments (2–32 threads) with a supervisor that detects the cycle and recovers by aborting a thread; protected mode enforces a learned global lock order.",
@@ -107,32 +135,22 @@ export const portfolioData = {
     },
     {
       id: 4,
-      title: "DP-FCFS – Predictive Cloud Task Scheduler",
-      description: "An intelligent cloud task-scheduling and visualization system built on First Come First Serve, extended with predictive analysis of queue and execution dynamics.",
-      technologies: ["React", "Vite", "Tailwind CSS", "Flask", "SQLite", "Chart.js"],
-      github: "https://github.com/midhungereketi/DP-FCFS",
-      liveDemo: "",
-      category: "Cloud Computing",
-      date: "2026",
-      image: "/projects/dp_fcfs.svg",
-      features: [
-        "FCFS scheduling engine that models task arrival, queueing and execution across cloud resources.",
-        "Interactive visualizations of queue state, Gantt-style execution timelines and performance metrics with Chart.js.",
-        "React + Flask architecture with SQLite persistence for tasks and scheduling runs."
-      ],
-      challenges: "Making a simple scheduling policy observable enough to reason about waiting time and utilization.",
-      solutions: "Paired the FCFS engine with predictive metrics and rich visual timelines so every scheduling decision can be inspected.",
-      results: "A visual scheduling sandbox for comparing task loads and understanding queue behaviour."
-    },
-    {
-      id: 5,
       title: "Smart School ERP",
-      description: "A complete school management platform with dedicated portals for administrators, faculty, students, parents, academic staff, finance, transport and library — on the web and as an Android app.",
+      description: "A school management platform with dedicated portals for administrators, faculty, students, parents, academic staff, finance, transport and library — on the web, with an Android build.",
       technologies: ["React", "Vite", "Supabase", "PostgreSQL", "Capacitor", "Android", "Groq AI"],
       github: "",
       liveDemo: "",
       category: "Full-Stack · Web + Android",
       date: "2026",
+      status: "",
+      role: "Solo build — data model, Supabase permissions and Edge Functions, all eight portals, and the Android packaging.",
+      outcome: "Eight role portals on one permission-checked database, verified against the live Supabase backend and covered by unit and browser regression tests.",
+      metrics: [
+        { value: "8", label: "Role-based portals" },
+        { value: "7", label: "Unit test suites" },
+        { value: "Web + Android", label: "One codebase" }
+      ],
+      metricsNote: "The repository is private because it is configured for a real school. A walkthrough is available on request.",
       image: "/projects/school_erp.svg",
       features: [
         "Role-based portals covering admissions, attendance, timetables, exams and marks, assignments, fees and invoices, transport, library, notices and leave, with server-side permissions and private file storage on Supabase.",
@@ -141,7 +159,31 @@ export const portfolioData = {
       ],
       challenges: "Serving eight different roles from one system while keeping every user's data, files and permissions strictly separated.",
       solutions: "Built on Supabase Auth with database-level permissions and private storage, administrator-managed accounts, and one shared data model that powers every portal.",
-      results: "Deployed to live school accounts with a published Android app, CSV/JSON exports, printable schedules and receipts, and automated browser regression tests."
+      results: "Frontend deployed on Vercel with the Supabase backend live and verified, CSV/JSON exports, printable schedules and receipts, and automated browser regression tests."
+    },
+    {
+      id: 5,
+      title: "DP-FCFS – Predictive Cloud Task Scheduler",
+      description: "A cloud task-scheduling and visualization system built on First Come First Serve, being extended with predictive analysis of queue and execution dynamics.",
+      technologies: ["React", "Vite", "Tailwind CSS", "Flask", "SQLite", "Chart.js"],
+      github: "https://github.com/midhungereketi/DP-FCFS",
+      liveDemo: "",
+      category: "Cloud Computing",
+      date: "2026",
+      status: "In progress",
+      role: "Solo project — scheduler, predictor and API in Flask, and the React dashboard.",
+      outcome: "Scheduler, predictor and REST API are in place; queue analytics and performance reporting are next on the roadmap.",
+      metrics: [],
+      metricsNote: "",
+      image: "/projects/dp_fcfs.svg",
+      features: [
+        "FCFS scheduling engine that models task arrival, queueing and execution across cloud resources.",
+        "Planned visualizations of queue state, Gantt-style execution timelines and performance metrics with Chart.js.",
+        "React + Flask architecture with SQLite persistence for tasks and scheduling runs."
+      ],
+      challenges: "Making a simple scheduling policy observable enough to reason about waiting time and utilization.",
+      solutions: "Pairing the FCFS engine with a predictor service and visual timelines so each scheduling decision can be inspected.",
+      results: "Work in progress — the scheduling core is built; analytics and reporting are underway."
     }
   ],
   experience: [
@@ -155,7 +197,8 @@ export const portfolioData = {
         "Explored responsible AI practices for real-world applications."
       ],
       technologies: ["Generative AI", "LLM", "Prompt Engineering", "APIs"],
-      achievements: "Completed IBM's Advanced Generative AI course."
+      achievements: "Completed IBM's Advanced Generative AI course.",
+      credentialUrl: ""
     },
     {
       company: "Various Hackathons",
@@ -167,7 +210,8 @@ export const portfolioData = {
         "Pitched technical architectures and product visions to judging panels."
       ],
       technologies: ["React.js", "Node.js", "AI APIs", "Firebase"],
-      achievements: "Consistently delivered working prototypes under pressure, showcasing strong problem-solving and teamwork skills."
+      achievements: "Consistently delivered working prototypes under pressure, showcasing strong problem-solving and teamwork skills.",
+      credentialUrl: ""
     }
   ],
   education: [
@@ -185,8 +229,8 @@ export const portfolioData = {
       title: "Basic Networking Certificate",
       provider: "Cisco",
       issueDate: "2024",
-      credentialId: "CSCO-123456",
-      verifyUrl: "#",
+      credentialId: "",
+      verifyUrl: "",
       image: "https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg"
     }
   ],

@@ -86,9 +86,13 @@ function Hero() {
   const title = useFitText<HTMLHeadingElement>();
   return <section className="hero" id="top" data-theme="light">
     <div className="hero-head">
-      <span className="hero-count">8.36</span>
+      <span className="hero-count">CGPA 8.36</span>
       <h1 ref={title}>CYBER SECURITY</h1>
       <p className="hero-based">STUDENT <i/> DEVELOPER <i/> BASED IN INDIA</p>
+    </div>
+    <div className="hero-intro">
+      <p className="hero-name">{personal.name}</p>
+      <p className="hero-pitch">{about.pitch}</p>
     </div>
     <div className="hero-stage">
       <div className="hero-panel">
@@ -126,8 +130,12 @@ function Manifesto() {
   </section>;
 }
 
+const FEATURED = 3;
+
 function Works({ open }: { open: (p: Project) => void }) {
   const [hovered, setHovered] = useState<number | null>(null);
+  const [showAll, setShowAll] = useState(false);
+  const shown = showAll ? projects : projects.slice(0, FEATURED);
   const ref = useRef<HTMLElement>(null);
   const onMove = (e: React.PointerEvent) => {
     const el = ref.current;
@@ -141,20 +149,24 @@ function Works({ open }: { open: (p: Project) => void }) {
       <h2 data-reveal>SELECTED WORKS<sup>({String(projects.length).padStart(2, '0')})</sup></h2>
       <div className="works-intro"><b>MG/03</b><p className="mono-tag">Security, systems and data projects — built end to end, from data model to interface.</p></div>
     </div>
-    <ol className="works-list" onPointerLeave={() => setHovered(null)}>{projects.map((p, i) => {
+    <ol className="works-list" id="works-list" onPointerLeave={() => setHovered(null)}>{shown.map((p, i) => {
       const [name, tagline] = p.title.split(' – ');
-      return <li key={p.id} className={hovered === i ? 'work active' : 'work'}>
-        <button className="work-row" data-reveal onClick={() => open(p)} onPointerEnter={() => setHovered(i)} onFocus={() => setHovered(i)} onBlur={() => setHovered(null)}>
+      const extra = i >= FEATURED;
+      return <li key={p.id} className={['work', extra && 'extra', hovered === i && 'active'].filter(Boolean).join(' ')}>
+        <button className="work-row" data-reveal={extra ? undefined : ''} onClick={() => open(p)} onPointerEnter={() => setHovered(i)} onFocus={() => setHovered(i)} onBlur={() => setHovered(null)}>
           <span className="work-no">0{i + 1}</span>
           <img className="work-thumb" src={p.image} alt='' loading="lazy"/>
-          <span className="work-name">{name}</span>
-          <span className="work-meta"><span>{tagline ?? p.category}</span><span>{p.technologies.slice(0, 3).join(' / ')}</span></span>
+          <span className="work-name">{name}{p.status && <em className="work-status">{p.status}</em>}</span>
+          <span className="work-meta"><span>{p.metrics.length ? p.metrics.slice(0, 2).map(m => `${m.value} ${m.label.toLowerCase()}`).join(' · ') : tagline ?? p.category}</span><span>{p.technologies.slice(0, 3).join(' / ')}</span></span>
           <span className="work-year">{p.date}</span>
           <span className="work-arrow" aria-hidden="true">↗</span>
         </button>
       </li>;
     })}</ol>
-    <div className="works-preview" aria-hidden="true">{projects.map((p, i) =>
+    {projects.length > FEATURED && <button className="works-more" aria-expanded={showAll} aria-controls="works-list" onClick={() => setShowAll(s => !s)}>
+      {showAll ? '[ − Fewer projects ]' : `[ + More projects (${projects.length - FEATURED}) ]`}
+    </button>}
+    <div className="works-preview" aria-hidden="true">{shown.map((p, i) =>
       <img key={p.id} src={p.image} alt='' className={hovered === i ? 'show' : ''}/>)}<span>[ VIEW CASE ]</span></div>
     <div className="works-foot"><span className="mono-tag">Click a project for the full case study</span><a className="underline-link" href={personal.socials.github} target="_blank" rel="noreferrer">More on GitHub ↗</a></div>
   </section>;
@@ -166,17 +178,17 @@ function Philosophy() {
     <div className="philosophy-cols">
       <p data-reveal>{about.story}</p>
       <a className="mono-link" href={personal.resumeUrl} target="_blank" rel="noreferrer">MY RÉSUMÉ ↘</a>
-      <p data-reveal className="philosophy-last">{about.careerGoals} I look for problems that need both careful reasoning and the patience to see them through.</p>
+      <p data-reveal className="philosophy-last">{about.careerGoals}</p>
     </div>
   </section>;
 }
 
 const capabilities = [
-  { title: 'Secure Development', items: ['Threat detection', 'URL risk scoring', 'Authentication & RBAC', 'Input validation'], body: 'Security works best when it shapes decisions early. I build detection signals, access control and clear feedback into the product itself.', image: projects[0].image },
-  { title: 'Full-Stack Web', items: ['React / Vite', 'Node.js / Express', 'Firebase / Firestore', 'Responsive UI'], body: 'From responsive interfaces to dependable backends, I turn requirements into products people can actually use.', image: '/projects/school_erp.svg' },
-  { title: 'AI Integration', items: ['Generative AI', 'Agentic workflows', 'LLM APIs', 'AI-assisted dev'], body: 'Trained through IBM’s Advanced Gen AI course — connecting LLMs to real systems and real data.', image: '/projects/enterprise_ai_1.svg' },
-  { title: 'Data & Analytics', items: ['Snowflake', 'Databricks', 'Chart.js dashboards', 'SQL'], body: 'Turning raw information into something you can read at a glance, from analytics pipelines to live dashboards.', image: '/projects/cyber_logs.svg' },
-  { title: 'DSA & Systems', items: ['C++ / Java / Python', 'Data structures', 'Algorithms', 'System design'], body: 'A strong grounding in algorithms and system design — the habit of choosing the right structure before writing the code.', image: '/projects/deadlock_lab.png' },
+  { title: 'Secure Development', items: ['Phishing detection (ML)', 'Argon2id & JWT auth', 'Role-based access', 'Rate limiting'], body: 'PhishGuard scores URLs and emails with trained models and shows every warning sign. The log platform puts its APIs behind Argon2id hashing, JWT sessions and role-based access.', image: projects[0].image },
+  { title: 'Full-Stack Web', items: ['React / Vite', 'FastAPI / Flask', 'Supabase / PostgreSQL', 'Android via Capacitor'], body: 'Smart School ERP runs eight role portals on React and Supabase, with permissions enforced in the database and an Android build from the same code.', image: '/projects/school_erp.svg' },
+  { title: 'AI Integration', items: ['Generative AI', 'LLM APIs', 'Prompt engineering', 'Moderation & limits'], body: 'Completed IBM’s Advanced Gen AI course. In the ERP, an AI Study Coach answers students through a Groq model with input and output moderation and a daily message limit.', image: '/projects/enterprise_ai_1.svg' },
+  { title: 'Data & Analytics', items: ['MongoDB indexing', 'PostgreSQL / SQL', 'Snowflake / Databricks', 'Dashboards'], body: 'Benchmarked indexed MongoDB search on one million logs, and built hourly timelines and attacker-IP rankings for the SOC dashboard.', image: '/projects/cyber_logs.svg' },
+  { title: 'DSA & Systems', items: ['C++ / Java / Python', 'Graph algorithms', 'Concurrency', 'System design'], body: 'Wait-For Graph cycle detection and lock-ordering experiments from 2 to 32 threads in the Deadlock Lab — algorithms applied to a real concurrency bug.', image: '/projects/deadlock_lab.png' },
 ];
 
 function Capabilities() {
@@ -203,14 +215,18 @@ function Capabilities() {
 
 function Recognition() {
   const rows = [
-    ...experience.map(e => ({ mark: e.company === 'IBM' ? 'IBM' : 'HX', name: `${e.company} — ${e.role}`, count: e.duration })),
-    ...certificates.map(c => ({ mark: c.provider.slice(0, 3).toUpperCase(), name: `${c.provider} — ${c.title}`, count: c.issueDate })),
-    { mark: 'VIT', name: `VIT Vellore — B.Tech Cyber Security`, count: education[0].cgpa.split(' ')[0] },
+    ...experience.map(e => ({ mark: e.company === 'IBM' ? 'IBM' : 'HX', name: `${e.company} — ${e.role}`, count: e.duration, url: e.credentialUrl })),
+    ...certificates.map(c => ({ mark: c.provider.slice(0, 3).toUpperCase(), name: `${c.provider} — ${c.title}`, count: c.issueDate, url: c.verifyUrl })),
+    { mark: 'VIT', name: `VIT Vellore — B.Tech Cyber Security`, count: `CGPA ${education[0].cgpa.split(' ')[0]}`, url: '' },
   ];
   return <section className="recognition" id="experience" data-theme="light">
     <div className="rec-side"><span className="mono-tag">EXPERIENCE &amp; CREDENTIALS</span><a className="mono-tag" href={personal.socials.github} target="_blank" rel="noreferrer">MY CODE ON<br/><u>GITHUB</u></a></div>
-    <ul className="rec-list">{rows.map(row =>
-      <li key={row.name} data-reveal><span className="rec-mark">{row.mark}</span><span className="rec-name">{row.name}<sup>[{row.count}]</sup></span><span className="rec-arrow" aria-hidden="true">↗</span></li>)}
+    <ul className="rec-list">{rows.map(row => {
+      const content = <><span className="rec-mark">{row.mark}</span><span className="rec-name">{row.name}<sup>[{row.count}]</sup></span></>;
+      return <li key={row.name} data-reveal>{row.url
+        ? <a className="rec-row" href={row.url} target="_blank" rel="noreferrer">{content}<span className="rec-arrow" aria-hidden="true">↗</span><span className="sr-only">(view credential)</span></a>
+        : <div className="rec-row">{content}</div>}</li>;
+    })}
     </ul>
   </section>;
 }
@@ -248,10 +264,17 @@ function CaseDialog({ project, close }: { project: Project | null; close: () => 
   return <dialog className="case" ref={dialog} onClose={close} onClick={e => e.target === dialog.current && close()}>
     {project && <div className="case-inner">
       <button className="case-close" onClick={close} aria-label="Close case study"><X size={20}/></button>
-      <span className="mono-tag">{project.category} · {project.date}</span>
+      <span className="mono-tag">{project.category} · {project.date}{project.status && ` · ${project.status}`}</span>
       <h2>{project.title}</h2>
-      <img src={project.image} alt={`${project.title} screenshot`}/>
+      <img src={project.image} alt={`${project.title} cover`}/>
       <p className="case-lead">{project.description}</p>
+      <div className="case-facts">
+        <div><span className="mono-tag">MY ROLE</span><p>{project.role}</p></div>
+        <div><span className="mono-tag">OUTCOME</span><p>{project.outcome}</p></div>
+      </div>
+      {project.metrics.length > 0 && <dl className="case-metrics">{project.metrics.map(m =>
+        <div key={m.label}><dt>{m.label}</dt><dd>{m.value}</dd></div>)}</dl>}
+      {project.metricsNote && <p className="case-note">{project.metricsNote}</p>}
       <ul className="case-features">{project.features.map((f, i) => <li key={f}><b>0{i + 1}</b>{f}</li>)}</ul>
       <div className="case-grid">
         <div><span className="mono-tag">CHALLENGE</span><p>{project.challenges}</p></div>
@@ -259,7 +282,11 @@ function CaseDialog({ project, close }: { project: Project | null; close: () => 
         <div><span className="mono-tag">RESULT</span><p>{project.results}</p></div>
       </div>
       <div className="case-stack">{project.technologies.map(t => <span key={t}>{t}</span>)}</div>
-      <div className="case-links">{project.github && project.github !== '#' && <a className="underline-link" href={project.github} target="_blank" rel="noreferrer">GitHub ↗</a>}{project.liveDemo && project.liveDemo !== '#' && <a className="underline-link" href={project.liveDemo} target="_blank" rel="noreferrer">Live demo ↗</a>}</div>
+      <div className="case-links">
+        {project.github && <a className="underline-link" href={project.github} target="_blank" rel="noreferrer">GitHub ↗</a>}
+        {project.liveDemo && <a className="underline-link" href={project.liveDemo} target="_blank" rel="noreferrer">Live demo ↗</a>}
+        {!project.github && !project.liveDemo && <a className="underline-link" href={`mailto:${personal.contactEmail}?subject=${encodeURIComponent(`Walkthrough — ${project.title}`)}`}>Request a walkthrough ↗</a>}
+      </div>
     </div>}
   </dialog>;
 }
